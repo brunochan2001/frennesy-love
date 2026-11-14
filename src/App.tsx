@@ -57,7 +57,9 @@ export default function App() {
               <div
                 className={`photo photo-${index + 1}`}
                 key={photo.src}
-                style={{ "--rotation": photo.rotate }}
+                style={
+                  { "--rotation": `${photo.rotate}deg` } as React.CSSProperties
+                }
               >
                 <img src={photo.src} alt={photo.text} />
                 <span>{photo.text}</span>
@@ -120,7 +122,7 @@ export default function App() {
 
           <div className="floating-hearts">
             {["💕", "💗", "💖", "❤️", "💘"].map((heart, i) => (
-              <span key={i} style={{ "--i": i }}>
+              <span key={i} style={{ "--i": i } as React.CSSProperties}>
                 {heart}
               </span>
             ))}
